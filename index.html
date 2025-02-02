@@ -1,28 +1,72 @@
-<html lang="en"><head>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desafio CSS 3</title>
+    <title>Desafios HTML e CSS!</title>
     <link rel="stylesheet" href="./style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-        </style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
 </head>
-<body>
-    <section class="left">
-<div class="caixa-texto">
-    <h1>Easy Shopping<br> Via Mobile</h1>
-        <p>E-commerce é o nome dado a um tipo de negócio que consiste na compra e venda de produtos totalmente através da internet.</p>
-        <button>Get Started</button>
-   </div> 
-</section>
-    <section class="right">
-        <ul>
-            <a>Home</a>
-            <a class="clarinho">Work</a>
-            <a>About</a>
-            <a>Contact</a>
-        </ul>
-        <img src="./shopping.png">
-    </section>
 
-</body></html>
+<body>
+    <nav>
+        <img id="logo" src="./logo.png">
+        <a>Contato</a>
+    </nav>
+    <section id="secao1">
+        <h1>Designer, Frontend Developer & Empreendedor</h1>
+        <p>Eu desenvovlo coisas simples e bonitas! Amo o que faço!</p>
+        <img id="avatar" src="./avatar.png">
+        <img id="ilustracao" src="./ilustracao.png">
+    </section>
+    <section id="secao2">
+        <div id="apresentacao">
+            <h2>Oi, Meu nome é Brenno, prazer em conhecer!</h2>
+            <p>Olá, me chamo Brenno Souza, sou motoboy, porteiro e trabalho com confeção de uniformes. Estou em
+                transição de carreira para a àrea da tecnologia, pois sempre gostei de computador, internet e etc.
+                Espero que esse curso agregue conhecimento e isso traga oportunidades no ramo da programação.</p>
+        </div>
+        <div id="skills"></div>
+        <div id="container">
+            <div id="designer"></div>
+            <h3>Ferramentas que domino:</h3>
+            <ul>
+                <li>Corel Draw</li>
+                <li>Gimp</li>
+                <li>Canva</li>
+                <li>Photoshop</li>
+            </ul>
+            <div id="dev"></div>
+            <h3>Linguagens que desenvolvo:</h3>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JAVASCRIPT</li>
+            </ul>
+            <p></p>
+            <div id="empreendedor"></div>
+            <h3>Projetos em que trabalho:</h3>
+            <ul>
+                <li>EDN Confecção de Uniformes</li>
+                <li>Seu Chapa Burguer</li>
+                <li>Código-fonte</li>
+                <li>Base Consultoria</li>
+            </ul>
+        </div>
+    </section>
+    <section id="portifolio">
+        <div>
+            <h2>Conheça meu portifólio</h2>
+            <p>Aqui estão alguns dos projetos em que trabalhei recentemente.</p>
+            <div id="container">
+                <div class="projetos"><img src="./projeto1.png"></div>
+                <div class="projetos"><img src="./projeto2.png"></div>
+                <div class="projetos"><img src="./projeto3.png"></div>
+                <div class="projetos"><img src="./projeto4.png"></div>
+            </div>
+    </section>
+</body>
+
+</html>
