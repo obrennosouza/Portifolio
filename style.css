@@ -1,0 +1,167 @@
+* {
+    margin:0;
+    padding:0;
+    font-family: 'Oswald';
+    color: rgb(86, 85, 126);
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+body {
+    display:flex;
+    flex-direction:row;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 3%;
+}
+
+a.clarinho {
+    opacity: 0.6;
+}
+
+a:hover{
+    cursor:pointer;
+} 
+
+
+button {
+    border: none;
+    width: 24vw;
+    height: 5vh;
+    border-radius: 50px;
+    color: white;
+    background-color: rgb(148, 153, 234);
+    font-size: 24px;
+}
+
+section.right {
+    width: 35vw;
+    background-color: rgb(229, 229, 234);
+    height: 100vh;
+}
+
+button:hover {
+    cursor:pointer;
+}
+
+a {
+    font-size: 30px;
+}
+
+img {
+    Width: 42vw;
+    position: absolute;
+    right: 9%;
+    top: 20%;
+}
+
+h1 {
+    font-size: 4vw;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.5961538553237915px;
+}
+
+p {
+    font-size: 1.9vw;
+    letter-spacing: 0.5px;
+    max-width: 70%;
+    line-height: 140%;
+    opacity: 0.6;
+}
+
+main {
+    align-items: center;
+    gap: 6%;
+    display: flex;
+    margin: 12% 5% 4% 9%;
+    justify-content: center;
+}
+.left {
+    width:65vw;
+}
+
+.caixa-texto {
+    display: inline-flex;
+    gap: 40px;
+    flex-direction: column;
+    position: absolute;
+    top: 29%;
+    left: 15%;
+    max-width: 50%;
+}
+
+@media only screen and (max-width: 900px){    
+
+body {
+        display:flex;
+        flex-direction:column;
+    }
+
+.left {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    margin: 15px;
+}
+
+h1 {
+        font-size: 9vw;
+        line-height: 130%;
+        text-align: center;
+    }
+
+p {
+	font-size: 4vw;
+	line-height: 120%;
+	max-width: 100%;
+	padding: 0% 16% 0% 16%;
+	text-align: center;
+	}
+
+button {
+	align-self: center;
+	height: 6vh;
+	width: 50vw;
+}
+
+a {
+	font-Weight: 600;
+        font-Size: 3.5vw;
+        margin-right: 4vw;
+    }
+
+   
+img {
+	height: 40vh;
+	width: auto;
+	position: unset;
+	}
+
+.caixa-texto {
+	display:flex;
+	gap: 2vh;
+	flex-direction: column;
+	max-width: 100vw;
+	position: unset;
+	align-items: center;
+	justify-content: center;
+}
+
+section.right {
+    width: 100vw;
+    background-color: rgb(229, 229, 234);
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+	display:none;
+}
+}
