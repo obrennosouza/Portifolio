@@ -2,7 +2,8 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Roboto", serif;
+    font-family: "Roboto mono", serif;
+    font-weight: 400;
 }
 
 #logo { 
@@ -36,8 +37,63 @@ section#secao1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
+    justify-content: flex-start;
 }
 
 #ilustracao {
-    max-width: 50vw;
+    max-width: 40vw;
+    position: absolute;
+    top: 67%;
 }
+
+section#secao2 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section#portifolio {}
+
+div#apresentacao {
+    background-color: rgb(255,201,14);
+    width: auto;
+    height: 50vh;
+    padding: 3% 15%;
+    text-align: center;
+}
+
+div#skills {
+    height: 50vh;
+    position: absolute;
+    top: -50%;
+    background-color: blue;
+}
+
+div#container {
+    position: relative;
+    top: -10%;
+    width: 60vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.skill {width: 33%;display: flex;background-color: white;flex-direction: column;align-items: center;border-radius: 10px;border: outset rgb(255 201 14 / 75%);height: 30vh;}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h3 {font-size: 1.2vw;}
+
+p {
+    font-size: 1.5rem;
+}
+
+h2 {font-size: 2rem;}
