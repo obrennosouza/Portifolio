@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: "Roboto mono", serif;
     font-weight: 400;
+    list-style-type: none;
 }
 
 #logo { 
@@ -15,16 +16,16 @@
     width: 210px;
 }
 
-img{ width: 100vw;}
+img{width: 100%;}
 
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0px 79px;
+    margin: 0px 79px 30px;
 }
 
-a {
+.btn {
     border-width: 2px;
     font-weight: 400;
     font-size: 18px;
@@ -32,6 +33,13 @@ a {
     border-radius: 50px;
     border: solid 2px;
 }
+
+.btn:hover{
+    background-color:black;
+    color:white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
 
 section#secao1 {
     display: flex;
@@ -56,10 +64,10 @@ section#secao2 {
 
 section#portifolio {}
 
-div#apresentacao {
+#apresentacao, #capa-portifolio {
     background-color: rgb(255,201,14);
     width: auto;
-    height: 50vh;
+    height: 60vh;
     padding: 3% 15%;
     text-align: center;
 }
@@ -73,14 +81,14 @@ div#skills {
 
 div#container {
     position: relative;
-    top: -10%;
-    width: 60vw;
+    top: -15%;
+    width: 100vw;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: center;
 }
 
-.skill {width: 33%;display: flex;background-color: white;flex-direction: column;align-items: center;border-radius: 10px;border: outset rgb(255 201 14 / 75%);height: 30vh;}
+.skill {width: 30%;display: flex;background-color: white;flex-direction: column;border-radius: 10px;border: outset rgb(255 201 14 / 75%);height: 30vh;align-items: center;padding: 2%;}
 
 h1, h2, h3 {
     font-weight: 600;
@@ -90,10 +98,10 @@ h1 {
     font-size: 2.5rem;
 }
 
-h3 {font-size: 1.2vw;}
+h3 {font-size: 1.5rem;margin: 3%;}
 
 p {
     font-size: 1.5rem;
 }
 
-h2 {font-size: 2rem;}
+h2 {font-size: 2rem;margin-bottom: 7%;}
