@@ -7,6 +7,11 @@
     list-style-type: none;
 }
 
+a {
+    color: unset;
+    
+}
+
 #logo { 
     width: 6vw;
     margin: 2vw;
