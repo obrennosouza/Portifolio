@@ -49,7 +49,8 @@ button:hover {
 }
 
 a {
-    font-size: 30px;
+	font-size: 30px;
+	text-decoration:unset;
 }
 
 img {
