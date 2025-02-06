@@ -27,6 +27,7 @@ a {
     font-weight: 400;
     letter-spacing: 0;
     margin-right: 3vw;
+    text-decoration:unset;
 }
 
 main {
