@@ -1,120 +1,52 @@
 <html lang="pt-br"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desafios HTML e CSS!</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Conversor de Moedas</title>
+    <link rel="stylesheet" href="./styles.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
     </style>
 </head>
 
 <body>
-    <nav>
-        <a href="https://obrennosouza.github.io/Portifolio/"><img id="logo" src="./logo.png"></a>
-        <a href="https://wa.me/5562986447042" class="btn">Contato</a>
-    </nav>
-    <section id="secao1">
-        <h1>Designer Gráfico, Desenvolvedor Frontend &amp; Empreendedor</h1>
-        <p>Eu desenvovlo coisas simples e bonitas! Amo o que faço!</p>
-        <img id="avatar" src="./avatar.png">
-        <img id="ilustracao" src="./ilustracao.png">
-    </section>
-    <section id="secao2">
-        <div id="apresentacao">
-            <h2>Oi, Meu nome é Brenno, prazer em conhecer!
-            </h2>
-            <p>Olá, me chamo Brenno Souza, atualmente estou trabalhando como, porteiro, motorista de aplicativo e também trabalhando com confeção de uniformes nos dias de folga. Estou em
-                transição de carreira para a àrea da tecnologia, pois sempre gostei de computador, internet e etc.
-                Espero que esse curso agregue conhecimento e isso traga oportunidades no ramo da programação.
-            </p>
+    <main>
+        <div id="esquerda">
+            <h1>Conversor de Moedas</h1>
+            <p>Primeiro selecione as moedas, depois digite o valor.</p>
+            <div id="container">
+                <label>
+                    Converter de:
+                    <select id="de">
+                        <option>Selecione</option>
+                        <option>Real</option>
+                        <option>Dolar</option>
+                        <option>Euro</option>
+                        <option>Libra</option>
+                    </select>
+                </label>
+<img id="img-d" src="" style="display: none;">
+                <p id="nomeDe">Real Brasileiro</p>
+                <input type="number" placeholder="digite o valor" id="valorOrigem">
+                <img id="seta" src="./pngtree-vector-down-arrow-icon-png-image_992004-removebg-preview.png">
+                <label>Converter para:
+                    <select id="para">
+                        <option>Selecione</option>
+                        <option>Real</option>
+                        <option>Dolar</option>
+                        <option>Euro</option>
+                        <option>Libra</option>
+                        <option>Bitcoin</option>
+                    </select>
+                </label>
+                <img id="img-p" src="" style="display: none;">
+                <p id="nomePara">Dolar Americano</p>
+                <input id="valorDestino" readonly="">
+            </div>
+            <a href="https://obrennosouza.github.io/Portifolio/">
+            <button id="botaoVoltar">Portifólio</button></a>
         </div>
+    </main>
 
-        <div id="container">
-            <div id="designer" class="skill">
-                <h3>Designer Gráfico</h3>
-                <img src="designer.svg" class="icone-skill">
-                <h3>Ferramentas que domino:</h3>
-                <ul>
-                    <li>Corel Draw<span>-----------</span></li>
-                    <li>Gimp</li>
-                    <li>Canva</li>
-                    <li>Photoshop</li>
-                </ul>
-            </div>
-            <div id="dev" class="skill">
-                <h3>Desenvolvedor FrontEnd</h3>
-                <img src="dev.svg" class="icone-skill">
-                <h3>Linguagens que desenvolvo:</h3>
-                <ul>
-                    <li>HTML<span>-----------------</span></li>
-                    <li>CSS</li>
-                    <li>JAVASCRIPT</li>
-                </ul>
-            </div>
-            <div id="empreendedor" class="skill">
-    <h3>Empreendedor</h3>
-    <img src="empreendedor.svg" class="icone-skill">
-                <h3>Projetos em que trabalho:</h3>
-                <ul>
-                    <li>EDN Confecção de Uniformes</li>
-                    <li>Seu Chapa Burguer</li>
-                    <li>Código-fonte</li>
-                    <li>Base Consultoria</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <section id="portifolio">
-        <div id="capa-portifolio">
-            <h2>Conheça meu portifólio</h2>
-            <p>Aqui estão alguns dos projetos em que trabalhei recentemente.
-            </p>
-        </div>
-        <div id="container-portifolio">
-    <a href="https://obrennosouza.github.io/Portifolio/desafio html/desafiohtml1.html">
-        <div class="cx-projeto">
-            <p>Desafio-HTML</p>
-            <div class="projetos">
-                <img src="./projeto1.png">
-            </div>
-        </div>
-    </a>
-
-    <a href="https://obrennosouza.github.io/Portifolio/desafio1/desafioCSS1.html">
-        <div class="cx-projeto">
-            <p>Desafio 1 CSS:</p>
-            <div class="projetos"><img src="./projeto2.png">
-            </div>
-        </div>
-    </a>
-
-    <a href="https://obrennosouza.github.io/Portifolio/desafio2/desafioCSS2.html">
-        <div class="cx-projeto">
-            <p>Desafio 2 CSS:</p>
-            <div class="projetos">
-                <img src="./projeto3.png">
-            </div>
-        </div>
-    </a>
-
-    <a href="https://obrennosouza.github.io/Portifolio/desafio3/desafio3css.html">
-        <div class="cx-projeto">
-            <p>Desafio 3 CSS:</p>
-            <div class="projetos"><img src="./projeto4.png">
-            </div>
-        </div>
-    </a>
-
-        <a href="https://obrennosouza.github.io/Portifolio/desafio%20JS%201/conversordemoedas.html">
-        <div class="cx-projeto">
-            <p>Desafio 1 JS:</p>
-            <div class="projetos"><img src="./projeto5.jpg">
-            </div>
-        </div>
-    </a>
-
-</div></section>
-    
-
+    <script src="./script.js"></script>
 
 </body></html>
