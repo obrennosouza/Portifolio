@@ -1,0 +1,121 @@
+header {
+    display: inline-flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    width: 99%;
+    margin: 10px 10px;
+    justify-content: center;
+}
+
+#home{
+	cursor: pointer;
+	margin-right: 15%;
+	display: flex;
+	align-items: center;
+}
+
+#logo-camiseta {
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+}
+
+button{
+    margin: 5px;
+    background: white;
+    color: #4A90E2;
+    border: 1px solid #4A90E2;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: large;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: larger;
+}
+
+h2 {
+    text-align: center;
+}
+
+.invisivel{
+    display:none;
+}
+
+.visivel{
+    display:block;
+    color: black;
+    border: 1px #4A90E2;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    }
+
+#cards {
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+   padding: 10px;
+   margin: 10px;
+   justify-content: space-around;
+}
+
+.conteudo-card {
+    font-size: xx-large;
+}
+
+.card {
+   width: 30%;
+   border-radius: 10px;
+   background-color: white;
+   margin: 10px;
+   font-size: larger;
+   text-align: center;
+   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-pedidos, .card-financeiro {
+   width: 99%;
+   border-radius: 10px;
+   background-color: white;
+   margin: 10px;
+   font-size: larger;
+   text-align: center;
+   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+table, form {
+    width: 99%;
+    font-size: larger;
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin: 1%;
+    padding: 1%;
+    text-align: center;
+}
+
+.miniatura{
+width: 40px;
+height: 40px;
+}
+
+form#formAddPedido {
+    width: 97%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+input, select {
+    width: 18%;
+    margin: 1%;
+    height: 40px;
+}
