@@ -1,1 +1,265 @@
-<h1>Hello world!</h1>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Confecção PRO</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <div id="home" onclick="trocarVisibilidade('inicio')">
+                <h1>Confecção PRO</h1>
+                <img src="imagens\logo-camiseta.png" id="logo-camiseta" alt="Ícone de confecção">
+            </div>        
+            <div id="botões">
+                <button id="botao-inicio" onclick="trocarVisibilidade('inicio')">Inicio</button>
+                <button id="botao-pedidos" onclick="trocarVisibilidade('pedidos')">Pedidos</button>
+                <button id="botao-financeiro" onclick="trocarVisibilidade('financeiro')">Financeiro</button>
+                <button id="botao-backup">Backup</button>
+                <button id="botao-excluir">Excluir tudo</button>
+            </div>
+        </header>
+        <div id="inicio" class="visivel">
+            <h2>Dashboard</h2>
+            <div id="cards">
+                <div class="card"><div id="lucro" class="conteudo-card">0,00</div><p>Lucro estimado</p></div>
+                <div class="card"><div id="andamento" class="conteudo-card">0,00</div><p>Pedidos em andamento</p></div>
+                <div class="card"><div id="silk" class="conteudo-card">0,00</div><p>Total gasto com Silk</p></div>
+                <div class="card"><div id="Bordado" class="conteudo-card">0,00</div><p>Total gasto em Bordado</p></div>
+                <div class="card"><div id="Costura" class="conteudo-card">0,00</div><p>Total gasto em costura</p></div>
+                <div class="card"><div id="DTF" class="conteudo-card">0,00</div><p>Total gasto em DTF</p></div>
+            </div>
+        </div>
+
+        <div id="pedidos" class="invisivel">
+            <h2>Gerenciamento de Pedidos</h2>
+            <button id="botao-addPedido" onclick="trocarVisibilidade('formulario-pedido')">Adicionar Pedido</button>
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Cliente</th>
+                            <th>Modelo</th>
+                            <th>Qtd</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>                
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="formulario-pedido" class="invisivel" >
+            <h2>Novo Pedido</h2>
+            <form id="formAddPedido" class="glass">
+                <input type="date" id="data" placeholder="Data do pedido" required="">
+                <input type="text" id="nomeCliente" placeholder="Nome do Cliente" required="">
+                <select id="modelo" name="modelo" placeholder="Selecione">
+                    <option value="Polo">Polo</option>
+                    <option value="Gola O">Gola O</option>
+                    <option value="Gola V">Gola V</option>
+                </select>
+                <input type="number" id="quantidade" placeholder="Qtd" required="">
+                <input type="number" id="precoUnit" placeholder="R$ Unitário" required="">
+                <select id="status" name="status" placeholder="Selecione">
+                    <option value="Novo Pedido">Novo pedido</option>
+                    <option value="Corte">Corte</option>
+                    <option value="Estampa">Estampa</option>
+                    <option value="Bordado">Bordado</option>
+                    <option value="Costura">Costura</option>
+                    <option value="Pronto">Pronto</option>
+                    <option value="Entregue">Entregue</option>
+                </select>
+                <button id="botao-addTabela" type="button" onclick="adicionarPedidoATabela();trocarVisibilidade('pedidos')">Atualizar</button>
+            </form>
+        </div>
+        
+        <div id="financeiro" class="invisivel">
+            <h2>Financeiro</h2>
+            <div id="cards">
+                <div class="card-financeiro">
+                    <div id="conteudo-card">
+                        <p>Conteúdo do card</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+        
+// --- FUNÇÕES DE UTILIDADE ---
+
+// Máscara de Moeda BRL
+function formatarMoeda(input) {
+    let valor = input.value.replace(/\D/g, "");
+    valor = (valor / 100).toFixed(2) + "";
+    valor = valor.replace(".", ",");
+    valor = valor.replace(/(\d)(\d{3}),/g, "$1.$2,");
+    input.value = "R$ " + valor;
+}
+
+// Converte "R$ 1.250,50" em número real 1250.50 para cálculos
+function moedaParaNumero(valor) {
+    if (!valor) return 0;
+    return parseFloat(valor.replace("R$ ", "").replace(/\./g, "").replace(",", "."));
+}
+
+// Formata número para texto BRL
+function numeroParaMoeda(valor) {
+    return valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
+}
+
+// --- LÓGICA DO SISTEMA ---
+
+function carregarDados() {
+    const dadosSalvos = localStorage.getItem('meusPedidos');
+    if (dadosSalvos) {
+        const pedidos = JSON.parse(dadosSalvos);
+        const corpoTabela = document.querySelector('tbody');
+        corpoTabela.innerHTML = ''; 
+
+        pedidos.forEach(pedido => {
+            renderizarLinha(pedido.data, pedido.cliente, pedido.modelo, pedido.quantidade, pedido.precoUnit, pedido.status);
+        });
+        atualizarDashboard();
+    }
+}
+
+window.onload = carregarDados;
+
+function renderizarLinha(data, cliente, modelo, quantidade, precoUnit, status) {
+    const corpoTabela = document.querySelector('tbody');
+    const novaLinha = document.createElement('tr');
+    
+    // Garantir que o precoUnit esteja formatado na tabela
+    const precoFormatado = precoUnit.includes("R$") ? precoUnit : numeroParaMoeda(parseFloat(precoUnit));
+
+    novaLinha.innerHTML = `
+        <td>${data}</td>
+        <td>${cliente}</td>
+        <td>${modelo}</td>
+        <td>${quantidade}</td>
+        <td>${precoFormatado}</td>
+        <td><span class="badge status-corte">${status}</span></td>
+        <td>
+            <button class="btn-tabela" onclick="editarPedido(this)">✏️Editar</button>
+            <button class="btn-tabela" onclick="fichaTecnica(this)">📋 Ficha Técnica</button>
+            <button class="btn-tabela" onclick="custos(this)">💸 Custos</button>
+            <button class="btn-tabela" onclick="deletarLinha(this)">❌ Excluir</button>
+        </td>
+    `;
+    corpoTabela.appendChild(novaLinha);
+}
+
+function salvarNoLocalStorage() {
+    const linhas = document.querySelectorAll('tbody tr');
+    const pedidos = [];
+    linhas.forEach(linha => {
+        const colunas = linha.querySelectorAll('td');
+        if (colunas.length >= 6) { 
+            pedidos.push({
+                data: colunas[0].innerText,
+                cliente: colunas[1].innerText,
+                modelo: colunas[2].innerText,
+                quantidade: colunas[3].innerText,
+                precoUnit: colunas[4].innerText, // Salva o texto formatado
+                status: colunas[5].innerText
+            });
+        }
+    });
+    localStorage.setItem('meusPedidos', JSON.stringify(pedidos));
+    atualizarDashboard();
+}
+
+function atualizarDashboard() {
+    const dadosSalvos = localStorage.getItem('meusPedidos');
+    if (!dadosSalvos) return;
+
+    const pedidos = JSON.parse(dadosSalvos);
+    let totalLucro = 0;
+    let totalAndamento = 0;
+
+    pedidos.forEach(p => {
+        // Cálculo de Lucro: Qtd * Preço
+        const qtd = parseInt(p.quantidade);
+        const preco = moedaParaNumero(p.precoUnit);
+        totalLucro += (qtd * preco);
+
+        // Contagem de pedidos (exceto os entregues)
+        if (p.status !== "Entregue") {
+            totalAndamento++;
+        }
+    });
+
+    // Atualiza os cards no HTML
+    document.getElementById('lucro').innerText = numeroParaMoeda(totalLucro);
+    document.getElementById('andamento').innerText = totalAndamento;
+}
+
+function trocarVisibilidade(idDaDivParaMostrar) {
+    const todasAsSecoes = document.querySelectorAll('#inicio, #pedidos, #formulario-pedido, #financeiro');
+    todasAsSecoes.forEach(secao => {
+        secao.classList.remove('visivel');
+        secao.classList.add('invisivel');
+    });
+
+    const divAlvo = document.getElementById(idDaDivParaMostrar);
+    if (divAlvo) {
+        divAlvo.classList.remove('invisivel');
+        divAlvo.classList.add('visivel');
+    }
+}
+
+function adicionarPedidoATabela() {
+    const data = document.getElementById('data').value;
+    const cliente = document.getElementById('nomeCliente').value;
+    const modelo = document.getElementById('modelo').value;
+    const quantidade = document.getElementById('quantidade').value;
+    const precoUnit = document.getElementById('precoUnit').value;
+    const status = document.getElementById('status').value;
+
+    if (cliente === "" || precoUnit === "") {
+        alert("Preencha os campos obrigatórios.");
+        return;
+    }
+
+    renderizarLinha(data, cliente, modelo, quantidade, precoUnit, status);
+    document.getElementById('formAddPedido').reset();
+    salvarNoLocalStorage();
+    trocarVisibilidade('pedidos');
+}
+
+function deletarLinha(botao) {
+    if (confirm("Deseja realmente excluir?")) {
+        botao.closest('tr').remove();
+        salvarNoLocalStorage();
+    }
+}
+
+function editarPedido(botao) {
+    const linha = botao.closest('tr');
+    
+    document.getElementById('data').value = linha.cells[0].innerText;
+    document.getElementById('nomeCliente').value = linha.cells[1].innerText;
+    document.getElementById('modelo').value = linha.cells[2].innerText;
+    document.getElementById('quantidade').value = linha.cells[3].innerText;
+    document.getElementById('precoUnit').value = linha.cells[4].innerText;
+    document.getElementById('status').value = linha.cells[5].innerText;
+
+    trocarVisibilidade('formulario-pedido');
+    linha.remove();
+    salvarNoLocalStorage();
+}
+
+document.getElementById('botao-excluir').onclick = function() {
+    if(confirm("Apagar tudo?")) {
+        localStorage.clear();
+        location.reload();
+    }
+};
+</script>
+
+    </body>
+</html>
