@@ -332,8 +332,8 @@
                 padding: 10%;
             }
 
-            hero-animado {
-                width: 70vw;
+            #hero-animado {
+                width: 99vw;
                 border-radius: 10px;
                 padding: 10%;
             }
