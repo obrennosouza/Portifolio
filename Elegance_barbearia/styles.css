@@ -247,10 +247,67 @@
             margin-bottom: 1rem;
         }
 
+        #equipe {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
         .agenda {
             justify-content: center;
             margin: 1%;
             padding: 3%;
+        }
+
+        #agenda {
+            display: none;
+        }
+
+        .foto-barbeiros {
+            width: 30vw;
+            filter: brightness(0.8);
+            margin: 06%;
+            transition: transform 0.7s ease;
+        }
+
+        .foto-barbeiros:hover {
+            width: 30vw;
+            filter: brightness(1.1);
+            transform: scale(1.1);
+        }
+
+        /* O Modal (fundo escuro) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Conteúdo do Pop-up */
+        .modal-conteudo {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 8px;
+        }
+
+        /* Botão Fechar */
+        .fechar {
+            color: #494949;
+            float: right;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .fechar:hover {
+            color: black;
         }
 
         /* Footer */
@@ -332,8 +389,8 @@
                 padding: 10%;
             }
 
-            #hero-animado {
-                width: 99vw;
+            hero-animado {
+                width: 80vw;
                 border-radius: 10px;
                 padding: 10%;
             }
@@ -348,6 +405,20 @@
             .cta-button {
                 margin-bottom: 10px;
             }
+
+            #equipe {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .foto-barbeiros {
+                width: 80vw;
+                filter: brightness(0.8);
+                margin: 06%;
+                transition: transform 0.7s ease;
+            }
+
 
 
         }
