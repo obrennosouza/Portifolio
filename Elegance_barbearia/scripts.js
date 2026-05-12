@@ -21,3 +21,27 @@
                 header.style.backdropFilter = 'none';
             }
         });
+
+        const modal = document.getElementById("meuPopUp");
+    const btnFechar = document.querySelector(".fechar");
+
+    // Seleciona todas as fotos com a classe foto-barbeiros
+    const fotos = document.querySelectorAll(".foto-barbeiros");
+
+    fotos.forEach(foto => {
+        foto.onclick = function() {
+            agenda.style.display = "block";
+        }
+    });
+
+    // Fecha ao clicar no X
+    btnFechar.onclick = function() {
+         agenda.style.display = "none";
+    }
+
+    // Fecha ao clicar fora da janela branca
+    window.onclick = function(event) {
+        if (event.target == modal) {
+             agenda.style.display = "none";
+        }
+    }
