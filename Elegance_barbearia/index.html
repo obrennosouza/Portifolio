@@ -101,21 +101,18 @@
             <h2>Escolha o seu barbeiro:</h2>
             <div id="equipe">
                 <div id="brenno">
-                    <a>
-                        <image class="foto-barbeiros" id="foto-brenno" src="barbeiro brenno.png"></image>
-                    </a>
+                    <img class="foto-barbeiros" id="foto-brenno" src="barbeiro brenno.png" style="cursor: pointer;">
                 </div>
                 <div id="salim">
-                    <a>
-                        <image class="foto-barbeiros" id="foto-salim" src="barbeiro Salim.png"></image>
-                    </a>
-                    <div id="agenda"><iframe
-                            src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;ctz=America%2FSao_Paulo&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;showTabs=0&amp;showTitle=0&amp;showDate=0&amp;src=YmFsZWY3MUBnbWFpbC5jb20&amp;color=%23e56e65"
-                            style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-                    </div>
+                    <img class="foto-barbeiros" id="foto-salim" src="barbeiro Salim.png" style="cursor: pointer;">
                 </div>
             </div>
-            <h2>Venha nos visitar!</h2>
+
+            <div id="agenda" class="modal">
+                <div class="modal-conteudo">
+                    <span class="fechar">&times;</span>
+                    <p> </p>
+                    <pre><code><h2>Venha nos visitar!</h2>
             <p style="font-size: 1.3rem; margin-bottom: 2rem;">Transforme seu visual com Elegance Barbearia</p>
 
             <!-- Google Calendar Appointment Scheduling begin -->
@@ -125,8 +122,9 @@
                     Agendar um horario
                 </button>
             </a><!-- end Google Calendar Appointment Scheduling -->
-
-
+        </code></pre>
+                </div>
+            </div>
     </section>
 
     <!-- Footer -->
