@@ -39,8 +39,8 @@ public class ItemPedido {
     @Column(name = "tipo_personalizacao")
     private Set<TipoPersonalizacao> personalizacoes = new HashSet<>();
 
-    @Column(name = "url_arte_anexo")
-    private String urlArteAnexo; // Link/URL para arquivo em nuvem ou vetor
+    @Column(name = "url_arte_anexo", length = 500)
+    private String urlArteAnexo;
 
     @Column(nullable = false)
     private Integer quantidade;
