@@ -1,0 +1,3 @@
+Estou iniciando uma nova jornada de aprendizagem.
+Conversando com um amigo que é TECH LEAD, ouvi a sua sugestão de aprender JAVA + Spring Boot + Banco de dados, para entrar no mercado da tecnologia, especialmente trabalhando para bancos.
+Então aqui vou registrar meus avanços no aprendizado dessas tecnologias.
