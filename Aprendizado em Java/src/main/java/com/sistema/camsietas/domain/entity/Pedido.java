@@ -46,7 +46,6 @@ public class Pedido {
         this.dataCriacao = LocalDate.now();
     }
 
-    // Regras de Negócio/Cálculos no modelo
     public BigDecimal getValorTotal() {
         if (itens == null || itens.isEmpty()) return BigDecimal.ZERO;
         return itens.stream()
