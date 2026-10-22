@@ -1,0 +1,20 @@
+{
+  "name": "news-short-video-demo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "remotion preview src/index.tsx",
+    "render": "remotion render src/index.tsx NewsShortVideo out/news-short-video.mp4",
+    "build": "remotion render src/index.tsx NewsShortVideo out/news-short-video.mp4"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remotion": "^4.0.130"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.0",
+    "typescript": "^5.4.5"
+  }
+}
